@@ -67,7 +67,7 @@ RECEIVER
 - **Key result:** achieves near-MMSE MSE performance without requiring the channel correlation matrix R_HH or noise variance — the network learns these implicitly from data
 
 ## Project Structure
-
+```
 mimo-ofdm/
 │
 ├── README.md
@@ -117,11 +117,8 @@ mimo-ofdm/
 │   ├── ber_estimation.png        % BER: LS vs MMSE vs DFT vs NN
 │   ├── ber_detection.png         % BER: ZF vs MMSE vs OSIC
 │   └── mse_comparison.png        % MSE vs SNR for all estimators
-│
-└── docs/
-    ├── dft_notes.md              % DFT concepts reference
-    └── channel_models_summary.md % Channel modeling notes
 
+```
 ## Channel Models
 
 ### Flat Rayleigh Fading
