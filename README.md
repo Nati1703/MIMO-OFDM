@@ -11,7 +11,7 @@ This project integrates concepts from coursework in Statistical Signal Processin
 ```
 TRANSMITTER
 ────────────────────────────────────────────────────────
-  Bits ->QAM Mapper → S/P
+Bits → QAM Mapper → S/P
                                             ↓
                             Antenna 1: IFFT → Add CP → Transmit
                             Antenna 2: IFFT → Add CP → Transmit
