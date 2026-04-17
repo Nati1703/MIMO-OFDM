@@ -68,17 +68,22 @@ RECEIVER
 
 ## Project Structure
 
-```
 mimo-ofdm/
 │
 ├── README.md
 │
 ├── matlab/
 │   ├── channel/
-│   │   ├── rayleigh_mimo.m        % i.i.d. and Kronecker correlated channel
+│   │   ├── Rayleigh_model.m       % Base SISO Rayleigh generator
+│   │   ├── Rician_model.m         % Base SISO Rician generator
+│   │   ├── rayleigh_mimo.m        % i.i.d. Rayleigh MIMO channel
+│   │   ├── rician_mimo.m          % Rician MIMO with configurable K-factor
+│   │   ├── kronecker_mimo.m       % Spatially correlated MIMO (Kronecker)
 │   │   ├── exp_pdp.m              % Exponential power delay profile
-│   │   ├── freq_selective.m       % Frequency-selective channel (tap → H[k])
-│   │   └── fwgn_model.m          % Filtered white Gaussian noise (Doppler)
+│   │   ├── freq_selective_mimo.m  % Static frequency-selective MIMO channel
+│   │   ├── doppler_spectrum.m     % Clarke/Jakes Doppler spectrum
+│   │   ├── fwgn_model.m           % Time-correlated fading (FWGN)
+│   │   └── time_varying_mimo.m    % Doubly-dispersive MIMO channel
 │   │
 │   ├── ofdm/
 │   │   ├── ofdm_mod.m            % IFFT + CP insertion
@@ -95,7 +100,10 @@ mimo-ofdm/
 │   │   ├── mmse_detector.m       % MMSE detection
 │   │   └── osic_detector.m       % OSIC with SINR-based ordering
 │   │
-│   ├── dft_review.m              % DFT/DSP fundamentals review and verification
+│   ├── preliminary/
+│   │   ├── dft_review.m          % DFT/DSP fundamentals verification
+│   │   └── channel_verification.m % Channel models verification
+│   │
 │   ├── simulate.m                % Main simulation script (BER curves)
 │   └── gen_training_data.m       % Generate (Y_pilot, H) pairs for NN training
 │
@@ -110,7 +118,9 @@ mimo-ofdm/
 │   ├── ber_detection.png         % BER: ZF vs MMSE vs OSIC
 │   └── mse_comparison.png        % MSE vs SNR for all estimators
 │
-```
+└── docs/
+    ├── dft_notes.md              % DFT concepts reference
+    └── channel_models_summary.md % Channel modeling notes
 
 ## Channel Models
 
